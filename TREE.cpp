@@ -21,18 +21,23 @@ public:
         cout << "Enter the number of chapters in the book : ";
         cin >> tchapters;
         root->ch_count = tchapters;
+
         for (i = 0; i < tchapters; i++) {
             root->child[i] = new node;
+
             cout << "Enter the chapter " << i + 1 << " name : ";
+
             cin >> root->child[i]->label;
+
             cout << "Enter the number of sections in the chapter : ";
             cin >> root->child[i]->ch_count;
+            
             for (j = 0; j < root->child[i]->ch_count; j++) {
+                
                 root->child[i]->child[j] = new node;
                 cout << "Enter the section " << j + 1 << " name : ";
                 cin >> root->child[i]->child[j]->label;
-                cout << "Enter the number of subsections in the section " <<
-                    root->child[i]->child[j]->label << " : ";
+                cout << "Enter the number of subsections in the section " <<root->child[i]->child[j]->label << " : ";
                 cin >> root->child[i]->child[j]->ch_count;
                 for (k = 0; k < root->child[i]->child[j]->ch_count; k++) {
                     root->child[i]->child[j]->child[k] = new node;
